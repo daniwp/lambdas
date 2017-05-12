@@ -17,3 +17,10 @@ Lambdas can also be used as parsing functions into other functions such as this 
     fun <T> lick (bod: () -> T) : T {
         return bod();
     }
+
+
+*Anonymous Functions 
+
+One thing missing from the lambda expression syntax presented above is the ability to specify the return type of the function. In most cases, this is unnecessary because the return type can be inferred automatically. However, if you do need to specify it explicitly, you can use an alternative syntax: an anonymous function.
+
+fun(x: Int, y: Int): Int = x + y
