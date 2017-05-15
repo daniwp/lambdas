@@ -25,8 +25,22 @@ One thing missing from the lambda expression syntax presented above is the abili
 
 fun(x: Int, y: Int): Int = x + y
 
-Underscore for unused variables (since 1.1)
+it: implicit name of a single parameter
+One other helpful convention is that if a function literal has only one parameter, its declaration may be omitted (along with the ->), and its name will be it:
 
+ints.map { it * 2 }
+
+These conventions allow to write LINQ-style code:
+
+strings.filter { it.length == 5 }.sortBy { it }.map { it.toUpperCase() }
+
+Underscore for unused variables (since 1.1)
 If the lambda parameter is unused, you can place an underscore instead of its name:
 
 map.forEach { _, value -> println("$value!") }
+
+
+In this case we do not even need to declare the return type as the compiler can figure it our itself
+having the parameter types being Integers
+
+val sum = { x: Int, y: Int -> x + y }
